@@ -1,6 +1,5 @@
 
 # 1. Présentation des fichiers météo
-===================================
 
 Nous disposons de fichiers de relevés météo (Open Data) indiquant les températures
 par régions ou par dates. Ces fichiers sont structurés de deux manières :
@@ -36,7 +35,6 @@ Dans HDFS, créez deux répertoires rdates et rregions. Chargez dans ces répert
 regions/*.txt.
 
 # 2. Calcul de la température moyenne
-===================================
 
 ## 2.1. Calcul de la température par région
 On souhaite calculer la moyenne des températures par région :
@@ -124,7 +122,6 @@ températures maximales et minimales par année.
               2000 Min : 2.5
               2000 Max : 24.5
 # 4. Calcul de la température globale On souhaite maintenant calculer la température globale qui correspond à la moyenne des températures sur toutes les années dans toutes les régions.
-===================================
 
 ** Travail à réaliser : **
 ## (1) Proposer un nouveau schéma du processus Map/Reduce.
@@ -140,7 +137,6 @@ Temperature Maximum 27.8
 Temperature Minimum -1.5
 
 # 5. Plus ou moins de données....
-===================================
 
 Nous allons dans cette question voir une solution permettant d'optimiser les traitementsMap/Reduce.
 ** Travail à réaliser :**
@@ -151,6 +147,7 @@ Optimiser autant que possible le processus Map si ce n'est pas le cas...
 Constatez-vous une évolution ?
 Exemple de trace d'exécution :
 Sans Combiner :
+
     INFO mapred.JobClient: Map input records=115
     INFO mapred.JobClient: Combine input records=0
     INFO mapred.JobClient: Reduce input records=108
@@ -167,4 +164,6 @@ Sans Combiner :
     Résultat obtenu (fichiers avec anomalies) :
     Temperature Maximum 27.8
     Temperature Minimum -1.5
-   
+    
+===================================
+
