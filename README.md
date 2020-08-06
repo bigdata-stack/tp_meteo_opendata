@@ -14,7 +14,7 @@ par régions ou par dates. Ces fichiers sont structurés de deux manières :
         Sud-Est 7,6 9,7 13,0 ...
         Corse 11,0 11,6 12,5 ...
 ## (2) Par régions : Exemple du fichier regions/TempératureOuest.txt
-Annee JAN FEV MAR ...
+        Annee JAN FEV MAR ...
         1997 2,8 8,4 10,3 ...
         1998 6,3 7,4 9,3 ...
         1999 7,7 6,7 9,2 ...
@@ -30,16 +30,17 @@ Annee JAN FEV MAR ...
         2009 3,9 5,5 8,2 ...
         2010 3,0 5,2 7,7 ...
         2011 5,7 8,3 9,1 ...
+        
 Travail à réaliser :
-Dans HDFS, créez deux répertoires rdates et rregions.
-Chargez dans ces répertoires, les fichiers issus respectivement de dates/*.txt et
+Dans HDFS, créez deux répertoires rdates et rregions. Chargez dans ces répertoires, les fichiers issus respectivement de dates/*.txt et
 regions/*.txt.
 
 # 2. Calcul de la température moyenne
 ===================================
 
-##2.1. Calcul de la température par région
+## 2.1. Calcul de la température par région
 On souhaite calculer la moyenne des températures par région :
+
         Centre-Est 11.896666666666667
         Corse 16.65277777777778
         Nord-Bassin-Parisien 11.462222222222222
@@ -47,64 +48,69 @@ On souhaite calculer la moyenne des températures par région :
         Ouest 12.142222222222221
         Sud-Est 15.234444444444446
         Sud-Ouest 13.374444444444443
+        
 Travail à réaliser :
 ### (1) Analyser l’organisation des données dans les fichiers pour choisir l’organisation adaptée (dates ou regions).
-### (2) Proposer le schéma du processus Map/Reduce associé qui permet de réaliser
-le traitement.
+### (2) Proposer le schéma du processus Map/Reduce associé qui permet de réaliser le traitement.
 ### (3) Implanter le schéma proposé en Java.
 ## 2.2. Calcul de la température par année
 On souhaite calculer la moyenne des températures par année :
-      *  1997 13.333333333333334
-       * 1998 12.735714285714288
-       * 1999 13.242857142857144
-       * 2000 13.398809523809524
-       * 2001 13.001190476190475
-       * 2002 13.375
-       * 2003 13.684523809523812
-       * 2004 12.425
-       * 2005 12.799999999999997
-       * 2006 13.517857142857142
-       * 2007 13.26309523809524
-       * 2008 12.879761904761907
-       * 2009 13.267857142857142
-       * 2010 12.178571428571429
-       * 2011 13.811904761904762
+
+        1997 13.333333333333334
+        1998 12.735714285714288
+        1999 13.242857142857144
+        2000 13.398809523809524
+        2001 13.001190476190475
+        2002 13.375
+        2003 13.684523809523812
+        2004 12.425
+        2005 12.799999999999997
+        2006 13.517857142857142
+        2007 13.26309523809524
+        2008 12.879761904761907
+        2009 13.267857142857142
+        2010 12.178571428571429
+        2011 13.811904761904762
 ** Travail à réaliser : **
 ### (1) Analyser l’organisation des données dans les fichiers pour choisir l’organisation adaptée (dates ou regions).
 ### (2) Proposer le schéma du processus Map/Reduce associé qui permet de réaliserle traitement.
 ### (3) Implanter le schéma proposé en Java.
 ## 2.3. Fichiers par année comportant des anomalies
 Supposons que les fichiers comportent des anomalies (données manquantes).
+
         Annee JAN FEV MAR ...
         1997 2,8 10,3 ...
         1998 6,3 7,4 9,3 ...
         1999 7,7 6,7 ...
-                ...
+
 ** Travail à réaliser :**
 ### (1) Proposer un nouveau schéma du processus Map/Reduce précédent qui supporte ces fichiers comportant des anomalies.
 ### (2) Prendre en compte cet élément sur la base des fichiers java des questions 2.1 et
 ## 2.2. Le résultat que vous devez obtenir doit correspondre à :
-              1997 13.49382716049383
-              1998 12.735714285714288
-              1999 13.27710843373494
-              2000 13.360975609756101
-              2001 13.001190476190473
-              2002 13.296385542168677
-              2003 13.560240963855415
-              2004 12.252439024390245
-              2005 12.8
-              2006 13.517857142857146
-              2007 13.196385542168674
-              2008 12.247222222222222
-              2009 12.630555555555555
-              2010 12.19756097560976
-              2011 13.811904761904756
+
+      1997 13.49382716049383
+      1998 12.735714285714288
+      1999 13.27710843373494
+      2000 13.360975609756101
+      2001 13.001190476190473
+      2002 13.296385542168677
+      2003 13.560240963855415
+      2004 12.252439024390245
+      2005 12.8
+      2006 13.517857142857146
+      2007 13.196385542168674
+      2008 12.247222222222222
+      2009 12.630555555555555
+      2010 12.19756097560976
+      2011 13.811904761904756
+      
 # 3. Calcul des températures moyennes, maximales et minimales par année On souhaite maintenant calculer, en plus de la température moyenne, les
 températures maximales et minimales par année.
 
 ** Travail à réaliser :**
 ## (1) Etendre le schéma du processus Map/Reduce pour calculer, en plus des moyennes, les températures maximales et minimales.
 ## (2) Modifier les programmes en conséquence. Exemple de résultat souhaité avec les fichiers avec anomalies :
+
               1997 Moy : 13.493827160493828
               1997 Min : -1.5
               1997 Max : 24.6
